@@ -13,7 +13,7 @@ class change_country_state(object):
         self.country_name=country_name
         self.state=state
     def finding_avg_no_of_days_for_country_to_change(self):
-        state1 = pd.read_csv(f"G:\\phytho\\uma mam\\hackathon\\group hackathon\\Covid--19-Stastical-approach-master\covid19_{self.state}_global.csv")#recovered
+        state1 = pd.read_csv(f"G:\\phytho\\uma mam\\hackathon\\group hackathon\\Covid--19-Stastical-approach-master\covid19_{self.state}_global.csv")#PLEASE CHANGE PATH FILE ACCORDING TO YOU AND MAKE SURE THAT U HAVE DOWNLOADED covid_19_deaths.csv & covid_19_recovered.csv WHICH IS BEEN UPLOADED IN THE SAME REPOSITORY
         state1 = state1.drop(['Province/State','Lat','Long'],axis=1)
         state1 = state1.groupby(state1['Country/Region']).aggregate('sum')
         state1=state1.T
@@ -25,7 +25,7 @@ class change_country_state(object):
         speak(f"It took {no_of_days} change the state of country to {self.state} from the date 22nd january 2020.")
   
 def max_no_of_days_it_took_by_country_in_whole_world():
-        death1 = pd.read_csv(f"G:\\phytho\\uma mam\\hackathon\\group hackathon\\Covid--19-Stastical-approach-master\covid19_deaths_global.csv")#recovered
+        death1 = pd.read_csv(f"G:\\phytho\\uma mam\\hackathon\\group hackathon\\Covid--19-Stastical-approach-master\covid19_deaths_global.csv")#PLEASE CHANGE PATH FILE ACCORDING TO YOU AND MAKE SURE THAT U HAVE DOWNLOADED covid_19_deaths.csv & covid_19_recovered.csv WHICH IS BEEN UPLOADED IN THE SAME REPOSITORY
         death1 = death1.drop(['Province/State','Lat','Long'],axis=1)
         death1 = death1.groupby(death1['Country/Region']).aggregate('sum')
         death1=death1.T
